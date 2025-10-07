@@ -8,11 +8,13 @@ const Navbar = () => {
                 <ul>
                     <li><a href="#inicio">About</a></li>
                     <li><a href="#acerca-de">Skills</a></li>
-                    <li><a href="#proyectos">Expirience</a></li>
+                    <li><a href="#proyectos">Experience</a></li>
                     <li><a href="#contacto">Proyects</a></li>
                     <li><a href="#contacto">Contact</a></li>
                 </ul>
-      {/* TODO: Aquí irá el botón para el cambio de tema oscuro/claro */}
+                <a 
+                href="https://github.com/AdrianPZG" target="_blank" rel="noopener noreferrer" className="button">GitHUb
+                </a>
         </nav>
     );
 };

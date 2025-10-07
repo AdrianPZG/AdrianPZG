@@ -1,7 +1,12 @@
 import { useState } from 'react'
 import Navbar from './components/NavBar'
 import Hero from './components/Hero'
+import SpaceAnimation from './components/SpaceAnimation'
+import Skills from './components/Skills'
 import './App.css'
+import './components/NavBar.css'
+import './components/Hero.css'
+import './components/SpaceAnimation.css'
 
 
 function App() {
@@ -9,9 +14,16 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar />
-      <Hero />
-       <section id="acerca-de">Sección Acerca de Mí</section>
+      <div className="main-layout">
+        <Navbar />
+        
+        <div className="hero-section">
+          <Hero />
+        </div>
+        <div className="animation-section">
+          <SpaceAnimation />
+        </div>
+      </div>
       
     </div>
   )
