@@ -1,12 +1,18 @@
 import { useState } from 'react'
+//components
 import Navbar from './components/NavBar'
 import Hero from './components/Hero'
 import SpaceAnimation from './components/SpaceAnimation'
 import Skills from './components/Skills'
+
+//styles
 import './App.css'
 import './components/NavBar.css'
 import './components/Hero.css'
 import './components/SpaceAnimation.css'
+import './components/Skills.css'
+
+
 
 
 function App() {
@@ -16,7 +22,6 @@ function App() {
     <div className="App">
       <div className="main-layout">
         <Navbar />
-        
         <div className="hero-section">
           <Hero />
         </div>
@@ -24,6 +29,9 @@ function App() {
           <SpaceAnimation />
         </div>
       </div>
+      <div className="skills-section">
+          <Skills />
+        </div>
       
     </div>
   )

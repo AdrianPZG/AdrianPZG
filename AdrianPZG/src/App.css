@@ -23,7 +23,7 @@ body {
 .main-layout {
   display: grid;
   grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
-  min-height: 100vh;
+  /* min-height: 100vh; */
   align-items: center;
   gap: 2rem;
   padding: 2rem;
@@ -41,6 +41,13 @@ body {
   align-items: center;
   justify-content: center;
   height: 100%;
+}
+
+.skills-section {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 2rem;
 }
 
 /* Responsive para pantallas pequeñas */

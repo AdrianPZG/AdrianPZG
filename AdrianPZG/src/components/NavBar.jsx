@@ -13,7 +13,7 @@ const Navbar = () => {
                     <li><a href="#contacto">Contact</a></li>
                 </ul>
                 <a 
-                href="https://github.com/AdrianPZG" target="_blank" rel="noopener noreferrer" className="button">GitHUb
+                href="https://github.com/AdrianPZG" target="_blank" rel="noopener noreferrer" className="button">GitHub
                 </a>
         </nav>
     );

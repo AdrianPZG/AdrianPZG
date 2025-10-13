@@ -1,0 +1,187 @@
+/* Estilos Globales de la Sección */
+.skills-section {
+  text-align: center; 
+  background-color: var(--color-secondary-bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding:  .5rem 2rem 4rem 2rem;
+}
+
+.section-title {
+  font-size: 2.3rem;
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+  font-family: Poppins, sans-serif;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: #aaa;
+  margin-bottom: 3rem;
+  font-family: Poppins, sans-serif;
+}
+
+/* 1. Contenedor Principal - CENTRADO */
+.skills-grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* 2. Estilo de la Tarjeta de Categoría */
+.skill-category-card {
+  background-color: rgba(26, 32, 53, 0.6); 
+  border-radius: 16px; 
+  padding: 2rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 77, 77, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+/* Tarjetas escalonadas (DevOps, Android, Others) */
+.staggered-card {
+  position: absolute;
+  top: 100%; /* Comienzan justo debajo de las primeras dos */
+  left: 0;
+  z-index: 1;
+}
+
+.staggered-card:nth-child(3) {
+  left: 5%;
+  transform: translateY(20px);
+}
+
+.staggered-card:nth-child(4) {
+  left: 15%;
+  transform: translateY(40px);
+}
+
+.staggered-card:nth-child(5) {
+  left: 25%;
+  transform: translateY(60px);
+}
+
+/* Animación al hover - MOVIMIENTO INTERACTIVO */
+.skill-category-card:hover {
+  transform: translateY(-8px) perspective(1000px) rotateX(0) rotateY(0);
+  box-shadow: 0 15px 40px rgba(128, 55, 55, 0.7),
+              0 0 25px rgba(100, 150, 255, 0.15);
+  border-color: rgba(255, 77, 77, 0.3);
+  background-color: rgba(26, 32, 53, 0.8);
+}
+
+/* Efecto de movimiento 3D al mover el mouse */
+.skill-category-card {
+  transform-style: preserve-3d;
+}
+
+.category-title {
+  font-size: 1.8rem;
+  color: var(--color-text); 
+  margin-bottom: 1.8rem;
+  font-weight: 500;
+  text-align: center;
+  padding-bottom: 0.5rem;
+}
+
+/* 3. Contenedor de Ítems - BIEN ACOMODADO */
+.category-items-wrapper-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+/* 4. Estilo de cada "pill" de habilidad */
+.skill-item-row {
+  display: inline-flex; 
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1.1rem 1.4rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  white-space: nowrap;
+  font-size: 0.95rem;
+}
+
+.skill-item-row:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.skill-name {
+  font-size: 0.95rem;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1;
+}
+
+/* Asegurar que los iconos estén alineados */
+.skill-item-row svg {
+  flex-shrink: 0;
+}
+
+/* Responsivo */
+@media (max-width: 1024px) {
+  .skills-grid-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .staggered-card {
+    position: static;
+    transform: none;
+    width: 100%;
+  }
+
+  .staggered-card:nth-child(3) { transform: translateY(0); }
+  .staggered-card:nth-child(4) { transform: translateY(0); }
+  .staggered-card:nth-child(5) { transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .skills-section {
+    padding: 3rem 5%;
+  }
+  
+  .skill-category-card {
+    padding: 1.5rem;
+  }
+  
+  .category-items-wrapper-list {
+    justify-content: center;
+    gap: 0.7rem;
+  }
+  
+  .skill-item-row {
+    padding: 0.65rem 1.1rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .category-title {
+    font-size: 1.5rem;
+  }
+}
