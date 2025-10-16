@@ -47,8 +47,18 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding-right: 2rem;
+  padding-right: 2rem; 
 }
+
+.experience-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* padding-right: 2rem; */
+}
+
+
+
 
 /* Responsive para pantallas pequeñas */
 @media (max-width: 1024px) {

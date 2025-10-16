@@ -1,9 +1,10 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 //components
 import Navbar from './components/NavBar'
 import Hero from './components/Hero'
 import SpaceAnimation from './components/SpaceAnimation'
 import Skills from './components/Skills'
+import Experience from './components/Experience'
 
 //styles
 import './App.css'
@@ -11,15 +12,17 @@ import './components/NavBar.css'
 import './components/Hero.css'
 import './components/SpaceAnimation.css'
 import './components/Skills.css'
+import './components/Experience.css'
 
 
 
 
 function App() {
-  const [count, setCount] = useState(0)
+  // const [count, setCount] = useState(0)
 
   return (
     <div className="App">
+
       <div className="main-layout">
         <Navbar />
         <div className="hero-section">
@@ -29,9 +32,13 @@ function App() {
           <SpaceAnimation />
         </div>
       </div>
+
       <div className="skills-section">
           <Skills />
-        </div>
+      </div>
+      <div className="experience-section">
+          <Experience />
+      </div>
       
     </div>
   )

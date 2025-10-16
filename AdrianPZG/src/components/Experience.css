@@ -1,0 +1,442 @@
+/* Estilos Globales de la Sección */
+.section-experience {
+    text-align: center;
+    background-color: var(--color-secondary-bg); 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 2rem;
+    min-height: 100vh;
+}
+
+.experience-header {
+    margin-bottom: 3rem;
+    max-width: 800px;
+}
+
+.title-experience {
+    font-size: 2.5rem;
+    color: var(--color-text); 
+    margin-bottom: 0.5rem;
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+}
+
+.subtitle-experience {
+    font-size: 1.1rem;
+    color: #aaa; 
+    margin-bottom: 1rem;
+    font-family: Poppins, sans-serif;
+}
+
+/* Contenedor de la Línea de Tiempo */
+.timeline-container {
+    position: relative;
+    max-width: 1000px; 
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* La línea vertical de la línea de tiempo */
+.timeline-container::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: var(--primary-accent-color, #ff4d4d); 
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+    z-index: 0;
+}
+
+/* Elemento Individual de la Línea de Tiempo (cada tarjeta de evento) */
+.timeline-item {
+    padding: 10px 0;
+    position: relative;
+    width: 50%;
+    z-index: 1;
+}
+
+/* Lado izquierdo de la línea de tiempo */
+.timeline-item.left {
+    left: 0;
+    padding-right: 2rem; 
+}
+
+/* Lado derecho de la línea de tiempo */
+.timeline-item.right {
+    left: 50%;
+    padding-left: 2rem; 
+}
+
+/* Punto en la línea de tiempo (contenedor para el logo central) */
+.timeline-dot {
+    position: absolute;
+    width: 40px; /* Tamaño más grande para el logo */
+    height: 40px; /* Tamaño más grande para el logo */
+    background-color: var(--primary-accent-color, #ff4d4d); 
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 3px solid var(--color-secondary-bg); 
+    z-index: 2;
+    display: flex; /* Para centrar el logo */
+    justify-content: center; /* Para centrar el logo */
+    align-items: center; /* Para centrar el logo */
+    overflow: hidden; /* Asegura que el logo no se salga */
+}
+
+/* Logo dentro del punto de la línea de tiempo */
+.timeline-dot-logo {
+    width: 80%; /* Ajusta el tamaño del logo dentro del punto */
+    height: 80%; /* Ajusta el tamaño del logo dentro del punto */
+    object-fit: contain; /* Para que la imagen se ajuste sin recortarse */
+    border-radius: 50%; /* Si quieres que el logo también sea circular */
+}
+
+
+/* Posicionar puntos para elementos izquierdos */
+.timeline-item.left .timeline-dot {
+    right: -20px; /* La mitad del ancho del dot */
+}
+
+/* Posicionar puntos para elementos derechos */
+.timeline-item.right .timeline-dot {
+    left: -20px; /* La mitad del ancho del dot */
+}
+
+/* Contenido de la Línea de Tiempo (la tarjeta en sí) */
+.timeline-content {
+    padding: 1.5rem;
+    text-align: left;
+    height: 100%; 
+    display: flex;
+    flex-direction: column;
+}
+
+/* Flecha para contenido izquierdo */
+.timeline-item.left .timeline-content::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    z-index: 1;
+    border: medium solid var(--primary-accent-color, #ff4d4d); 
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent var(--primary-accent-color, #ff4d4d);
+    right: -10px; 
+}
+.timeline-item.left .timeline-content::after {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    z-index: 1;
+    border: medium solid var(--color-secondary-bg); 
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent var(--color-secondary-bg);
+    right: -9px; 
+}
+
+
+/* Flecha para contenido derecho */
+.timeline-item.right .timeline-content::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    z-index: 1;
+    border: medium solid var(--primary-accent-color, #ff4d4d); 
+    border-width: 10px 10px 10px 0;
+    border-color: transparent var(--primary-accent-color, #ff4d4d) transparent transparent;
+    left: -10px; 
+}
+.timeline-item.right .timeline-content::after {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    z-index: 1;
+    border: medium solid var(--color-secondary-bg); 
+    border-width: 10px 10px 10px 0;
+    border-color: transparent var(--color-secondary-bg) transparent transparent;
+    left: -9px; 
+}
+
+
+/* Encabezado del contenido de la tarjeta para agrupar fecha, título y logo */
+.timeline-content-header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.8rem;
+}
+
+/* Grupo de título y logo para que estén en la misma línea */
+.timeline-title-group {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem; /* Espacio entre el título y el logo */
+    margin-bottom: 0.3rem; /* Ajuste si es necesario */
+}
+
+/* Logo dentro de la tarjeta */
+.timeline-card-logo {
+    width: 28px; /* Tamaño del logo dentro de la tarjeta */
+    height: 28px; /* Tamaño del logo dentro de la tarjeta */
+    object-fit: contain;
+    border-radius: 4px; /* Un poco de redondeo para los logos */
+    flex-shrink: 0; /* Evita que el logo se encoja */
+}
+
+/* Estilos para el texto de la tarjeta */
+.timeline-date {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 0.5rem;
+    display: block;
+    font-family: Poppins, sans-serif;
+}
+
+.timeline-title {
+    font-size: 1.3rem;
+    color: var(--color-text);
+    font-weight: 500;
+    font-family: Poppins, sans-serif;
+    line-height: 1.2; /* Ajusta la altura de línea para que se alinee con el logo */
+}
+
+.timeline-company { /* Cambiado de timeline-institution a timeline-company */
+    font-size: 1rem;
+    color: #bbb;
+    margin-top: 0.2rem;
+    font-weight: 400;
+    font-family: Poppins, sans-serif;
+}
+
+.timeline-description {
+    font-size: 0.95rem;
+    color: #ccc;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    flex-grow: 1; 
+    font-family: Poppins, sans-serif;
+}
+
+.timeline-skills {
+    margin-top: auto; 
+    justify-content: flex-start; 
+}
+
+/* Estilos específicos de las "píldoras" de habilidad para la línea de tiempo */
+.timeline-skills .skill-pill {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.75rem;
+    border-color: rgba(255, 255, 255, 0.08); 
+}
+
+.timeline-skills .skill-pill:hover {
+    transform: translateY(-2px) scale(1.02); 
+}
+
+
+/* Estilos Responsivos */
+@media screen and (max-width: 768px) {
+    .timeline-container::after {
+        left: 20px; 
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 40px; 
+        padding-right: 0;
+    }
+
+    .timeline-item.left,
+    .timeline-item.right {
+        left: 0;
+        padding-right: 0;
+    }
+
+    .timeline-item.left .timeline-dot,
+    .timeline-item.right .timeline-dot {
+        left: 12px; 
+        right: auto;
+    }
+
+    .timeline-item.left .timeline-content::before,
+    .timeline-item.left .timeline-content::after {
+        left: 30px; 
+        right: auto;
+        border-color: transparent transparent transparent transparent; 
+    }
+    .timeline-item.right .timeline-content::before,
+    .timeline-item.right .timeline-content::after {
+        left: 30px; 
+        right: auto;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent var(--primary-accent-color, #ff4d4d) transparent transparent;
+    }
+    .timeline-item.right .timeline-content::after {
+        border-color: transparent var(--color-secondary-bg) transparent transparent;
+    }
+
+    /* Ajustes de texto para pantallas pequeñas */
+    .timeline-title {
+        font-size: 1.2rem;
+    }
+    .timeline-company {
+        font-size: 0.9rem;
+    }
+    .timeline-description {
+        font-size: 0.9rem;
+    }
+    .timeline-skills .skill-pill {
+        font-size: 0.7rem;
+        padding: 0.35rem 0.7rem;
+    }
+
+    /* Ajustes de logos en móvil */
+    .timeline-dot {
+        width: 30px;
+        height: 30px;
+        left: 10px;
+    }
+    .timeline-dot-logo {
+        width: 70%;
+        height: 70%;
+    }
+    .timeline-card-logo {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .section-experience {
+        padding: 3rem 1rem;
+    }
+    .title-experience {
+        font-size: 2rem;
+    }
+    .subtitle-experience {
+        font-size: 1rem;
+    }
+    .timeline-content {
+        padding: 1rem;
+    }
+    .timeline-title {
+        font-size: 1.1rem;
+    }
+    .timeline-company {
+        font-size: 0.85rem;
+    }
+    .timeline-description {
+        font-size: 0.85rem;
+    }
+}
+
+
+/* Reutilizando estilos de skill-category-card de skills.css */
+.skill-category-card {
+  background: linear-gradient(135deg, rgba(26, 32, 53, 0.95) 0%, rgba(20, 25, 45, 0.98) 100%);
+  border-radius: 16px; 
+  box-shadow: 0 8px 32px rgba(31, 10, 10, 0.5),
+              0 4px 16px rgba(255, 77, 77, 0.2),
+              inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 77, 77, 0.3);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden; /* Importante para que el brillo no se desborde */
+}
+
+/* Efecto de brillo */
+.skill-category-card::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 77, 77, 0.1) 0%,
+    transparent 70%
+  );
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Efecto de movimiento de brillo al hover */
+.skill-category-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 77, 77, 0.1), transparent);
+  transition: left 0.6s;
+  z-index: 1; /* Asegúrate de que el brillo esté encima de otros elementos de la tarjeta pero debajo del contenido */
+}
+
+.skill-category-card:hover::before {
+  left: 100%;
+}
+
+/* Animación al hover de crecimiento */
+.skill-category-card:hover {
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.6),
+              0 8px 24px rgba(255, 77, 77, 0.4),
+              inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 77, 77, 0.6);
+  transform: translateY(-8px);
+}
+
+/* Contenedor de las "píldoras" de habilidad */
+.category-items-wrapper-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem; 
+  justify-content: center; /* Centrar en el caso de que haya pocas */
+  align-items: center;
+  position: relative;
+  z-index: 2; /* Asegura que las skills estén encima del brillo */
+}
+
+/* Estilo de cada "píldora" de habilidad */
+.skill-item-row {
+  display: inline-flex; 
+  align-items: center;
+  gap: 0.5rem; 
+  padding: 0.6rem 1rem; 
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px; 
+  color: var(--color-text);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+  font-size: 0.85rem; 
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  z-index: 2; /* Asegura que las skills estén encima del brillo */
+}
+
+.skill-item-row:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 77, 77, 0.4);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4),
+              0 0 20px rgba(255, 77, 77, 0.2);
+  transform: translateY(-3px) scale(1.03);
+}
