@@ -6,9 +6,9 @@ const Navbar = () => {
         <nav className="navbar">
             <div className="logo">AdrianPZG</div>
                 <ul>
-                    <li><a href="#inicio">About</a></li>
-                    <li><a href="#acerca-de">Skills</a></li>
-                    <li><a href="#proyectos">Experience</a></li>
+                    <li><a href="#hero-container">About</a></li>
+                    <li><a href="#habilidades">Skills</a></li>
+                    <li><a href="#experience">Experience</a></li>
                     <li><a href="#contacto">Proyects</a></li>
                     <li><a href="#contacto">Contact</a></li>
                 </ul>

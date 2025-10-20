@@ -47,30 +47,32 @@ const Hero = () => {
   }, [currentPhrase, isDeleting, isPaused, phraseIndex, phrases, typingSpeed]);
 
   return (
-    <div className='hero-container'>
-      <header className='hero'>
-        <h1>
-          <span className="static-text">Hello there! I'm Adrián Pérez and I'm a</span>
-        </h1>
-        <div className="typing-container">
-          <span className="typing-text">{isPaused ? '' : currentPhrase}</span>
-          <span className="cursor">|</span>
-        </div>
-        <p>
-          I'm eager to apply my technical knowledge and problem-solving skills in a challenging and innovative environment. 
-          If you're looking for a proactive and detail-oriented individual with a robust technical background and a passion for continuous learning, 
-          I would be thrilled to connect and explore opportunities!
-        </p>
-        <a 
-          href="https://www.linkedin.com/in/adrián-pérez-galicia-5337a3231" 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          className="button-linkedin"
-        >
-          Check my LinkedIn
-        </a>
-      </header>
-    </div>
+    <section id='hero-container'>
+      <div className='hero-container'>
+        <header className='hero'>
+          <h1>
+            <span className="static-text">Hello there! I'm Adrián Pérez and I'm a</span>
+          </h1>
+          <div className="typing-container">
+            <span className="typing-text">{isPaused ? '' : currentPhrase}</span>
+            <span className="cursor">|</span>
+          </div>
+          <p>
+            I'm eager to apply my technical knowledge and problem-solving skills in a challenging and innovative environment. 
+            If you're looking for a proactive and detail-oriented individual with a robust technical background and a passion for continuous learning, 
+            I would be thrilled to connect and explore opportunities!
+          </p>
+          <a 
+            href="https://www.linkedin.com/in/adrián-pérez-galicia-5337a3231" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="button-linkedin"
+          >
+            Check my LinkedIn
+          </a>
+        </header>
+      </div>
+    </section>
   );
 };
 
